@@ -156,7 +156,7 @@ export default class PhaserNavMeshPlugin extends Phaser.Plugins.ScenePlugin {
     );
 
     // Offset and scale each polygon if necessary.
-    if (scaleX !== 1 && scaleY !== 1 && offsetX !== 0 && offsetY !== 0) {
+    if (scaleX !== 1 || scaleY !== 1 || offsetX !== 0 || offsetY !== 0) {
       polygons = polygons.map((poly) =>
         poly.map((p) => ({ x: p.x * scaleX + offsetX, y: p.y * scaleY + offsetY }))
       );
